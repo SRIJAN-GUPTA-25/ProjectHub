@@ -1,0 +1,99 @@
+/* SignUp.module.css */
+
+.signUpContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f4ecbb, rgb(247, 200, 113));
+    /* Yellow to Orange gradient */
+}
+
+.signUpBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Semi-transparent background for the box */
+    backdrop-filter: blur(10px);
+    /* Glassmorphism effect */
+    border-radius: 10px;
+    /* Rounded corners for the box */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    /* Shadow for the box */
+    height: 400px;
+    /* Set a fixed height for the sign-up box */
+}
+
+.h2 {
+    color: #FF9900;
+    font-size: 30px;
+    /* Increase the size of the heading */
+    margin-bottom: 20px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.label {
+    color: #C13100;
+    font-size: 20px;
+    /* Increase the size of the labels */
+    margin-bottom: 8px;
+}
+
+.input {
+    padding: 8px;
+    border: 1px solid #FF9900;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.signUpButton {
+    padding: 10px 20px;
+    background-color: #FF9900;
+    color: #FFFBD0;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    /* Add some margin at the top */
+}
+
+.signUpButton:hover {
+    background-color: #C13100;
+}
+
+p {
+    color: #C13100;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+a {
+    color: #FF9900;
+}
+
+/* Additional classes for the box styling */
+.boxContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.signUpBoxContent {
+    width: 100%;
+    max-width: 400px;
+}
+
+.centerText {
+    display: flex;
+    justify-content: center;
+}

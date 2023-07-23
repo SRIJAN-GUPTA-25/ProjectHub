@@ -27,7 +27,7 @@ function Account(props) {
         useState(false);
     const [profileImageUrl, setProfileImageUrl] = useState(
         userDetails.profileImage ||
-        "https://cdn.onlinewebfonts.com/svg/img_504768.png"
+        "https://cdn.pixabay.com/photo/2021/02/23/09/26/cat-6042858__340.jpg"
     );
     const [userProfileValues, setUserProfileValues] = useState({
         name: userDetails.name || "",
@@ -162,14 +162,14 @@ function Account(props) {
                 <div className={styles.profile}>
                     <div className={styles.left}>
                         <div className={styles.image}>
-                            <img src={profileImageUrl} alt="Profile_image" />
+                            <img src={profileImageUrl} alt="Profile image" />
                             <div className={styles.camera} onClick={handleCameraClick}>
                                 <Camera />
                             </div>
                         </div>
                         {profileImageUploadStarted ? (
                             <p className={styles.progress}>
-                                {progress === 100
+                                {progress == 100
                                     ? "Getting image url..."
                                     : `${progress.toFixed(2)}% uploaded`}
                             </p>
@@ -231,7 +231,7 @@ function Account(props) {
                         Add Project
                     </button>
                 </div>
-                {/* 
+
                 <div className={styles.projects}>
                     {projectsLoaded ? (
                         projects.length > 0 ? (
@@ -261,7 +261,7 @@ function Account(props) {
                     ) : (
                         <Spinner />
                     )}
-                </div> */}
+                </div>
             </div>
         </div>
     ) : (

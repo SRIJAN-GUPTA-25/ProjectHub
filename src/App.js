@@ -2,12 +2,14 @@ import './App.css';
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Home from './Components/Home';
-import Login from './Components/Login';
+import Login from './Components/Login/Login';
 import SignUp from './Components/SignUp';
 import { auth, getUserFromDatabase } from "./firebase";
 import Spinner from './Components/Spinner/Spinner';
 
 import Account from './Components/Account/Account';
+import About from './Components/About/Aboutus';
+// import Login from './Components/Login/Login';
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userDetails, setUserDetails] = useState({});
@@ -49,6 +51,7 @@ function App() {
               )}
               <Route path='/account' element={<Account userDetails={userDetails} auth={isAuthenticated} />} />
               <Route path='/' element={<Home auth={isAuthenticated} />} />
+              <Route path='/about' element={<About />} />
               <Route path='/*' element={<Navigate to="/" />} />
             </Routes>
             :

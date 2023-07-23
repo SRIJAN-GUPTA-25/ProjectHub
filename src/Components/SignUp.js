@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import './LoginPage.css';
+import styles from '../Components/Login/Login.module.css';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, updateUserDB } from '../firebase.js';
 import { useNavigate } from 'react-router-dom';
+import Login from '../Components/Login/Login';
+
 const SignUp = () => {
     const [values, setValues] = useState({
         name: "",
@@ -38,43 +40,47 @@ const SignUp = () => {
         e.preventDefault();
         handleSignUp();
     }
+
     return (
-        <div className="login-container">
-            <h2>Sign-Up</h2>
+        <div className={styles.loginContainer}>
+            <h2 className={styles.h2}>Sign-Up</h2>
             <form onSubmit={handleSubmission}>
-                <div className="form-group">
-                    <label htmlFor="name">Name:</label>
+                <div className={styles.formGroup}>
+                    <label htmlFor="name" className={styles.label}>Name:</label>
                     <input type="text" id="name" name="name" required
                         placeholder='Enter your name'
                         onChange={(e) =>
                             setValues((prev) => ({ ...prev, name: e.target.value }))
                         }
+                        className={styles.input}
                     />
                 </div>
-                <div className="form-group">
-                    <label htmlFor="email">Email:</label>
+                <div className={styles.formGroup}>
+                    <label htmlFor="email" className={styles.label}>Email:</label>
                     <input type="email" id="email" name="email" required
-                        placeholder='Enter your name'
+                        placeholder='Enter your email'
                         onChange={(e) =>
                             setValues((prev) => ({ ...prev, email: e.target.value }))
                         }
+                        className={styles.input}
                     />
                 </div>
-                <div className="form-group">
-                    <label htmlFor="password">Password:</label>
+                <div className={styles.formGroup}>
+                    <label htmlFor="password" className={styles.label}>Password:</label>
                     <input type="password" id="password" name="password" required
-                        placeholder='Enter your email'
+                        placeholder='Enter your password'
                         onChange={(e) =>
                             setValues((prev) => ({ ...prev, password: e.target.value }))
                         }
+                        className={styles.input}
                     />
                 </div>
                 <div>
                     <p>{errorMsg}</p>
                 </div>
-                <button type="submit" className="login-button">Sign-Up</button>
+                <button type="submit" className={styles.loginButton}>Sign-Up</button>
                 <div>
-                    <p>Already Registered? <a href='/login'>  Login</a></p>
+                    <p>Already Registered? <a href='/login'>Login</a></p>
                 </div>
             </form>
         </div>
