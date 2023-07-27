@@ -1,0 +1,99 @@
+/* Navbar Styles */
+.navbar {
+    background-color: #343230;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+.navbarContainer {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+
+.logoLink {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.logoImage {
+    /* Adjust the width as per your logo size */
+    height: 40px;
+    width: auto;
+    margin-right: 0.5rem;
+}
+
+
+.navLinks {
+    margin-top: 0.75rem;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-left: 15vw;
+    font-size: 18px;
+    /* Increase the size of the options */
+    font-weight: bold;
+    /* Bold the options */
+}
+
+.navLinkItem {
+    margin: 0 1.5rem;
+}
+
+.navLink {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navLink:hover {
+    color: #f39c12;
+}
+
+.loginSignupLinks {
+    display: flex;
+    align-items: center;
+}
+
+.loginLink,
+.signupLink {
+    color: #fff;
+    text-decoration: none;
+    padding: 0rem 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+    /* Increase the size of the options */
+    font-weight: bold;
+}
+
+.loginLink:hover,
+.signupLink:hover {
+    color: #f39c12;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navbarContainer {
+        justify-content: space-between;
+    }
+
+    .navLinks {
+        display: none;
+    }
+
+    .loginSignupLinks {
+        margin-right: 1rem;
+    }
+}

@@ -1,0 +1,32 @@
+/* body {
+    margin: 0;
+    background-color: coral;
+    background: linear-gradient(45deg, #FF8E8E, #F5A94C, #E0C15B);
+} */
+
+.spinner {
+    margin: auto;
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border: 4px solid #ed9632;
+    border-bottom-color: transparent;
+    position: relative;
+    animation: spinner 1s linear infinite paused;
+    -webkit-animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(1turn);
+        -webkit-transform: rotate(1turn);
+        -moz-transform: rotate(1turn);
+        -ms-transform: rotate(1turn);
+        -o-transform: rotate(1turn);
+    }
+}

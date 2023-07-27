@@ -1,0 +1,118 @@
+/* Home.module.css */
+.homepage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fdedb1;
+    /* Applied color theme */
+}
+
+.taglineContainer {
+    text-align: left;
+    padding-left: 50px;
+}
+
+.tagline {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0;
+    color: #ff9900;
+    /* Applied color theme */
+}
+
+.subtagline {
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    color: #ff9900;
+    /* Applied color theme */
+}
+
+.description {
+    font-size: 20px;
+    margin-bottom: 40px;
+    color: #ff9900;
+    /* Applied color theme */
+}
+
+.imageContainer {
+    flex: 1;
+    text-align: right;
+    padding-right: 50px;
+    position: relative;
+}
+
+.projectImage {
+    max-width: 90%;
+    height: auto;
+    border-radius: 50%;
+    /* transform: rotate(-10deg); */
+    top: -30%;
+    left: -40%;
+    width: 180%;
+    height: 160%;
+    border-radius: 50%;
+    /* transform: rotate(-10deg); */
+    background-color: rgba(255, 255, 255, 1);
+    mix-blend-mode: multiply;
+    z-index: 2;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff9900;
+    /* Applied color theme */
+    color: #fff;
+    border-radius: 5px;
+    border: 0px;
+    text-decoration: none;
+}
+
+.body {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.body .title {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.body .projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.projects .project {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.project .image {
+    width: 300px;
+    height: 160px;
+}
+
+.project .image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.project .title {
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 20px;
+}

@@ -1,0 +1,43 @@
+/* Ask.module.css */
+.askContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    height: 70vh;
+}
+
+.searchContainer {
+    display: flex;
+    align-items: center;
+}
+
+.inputText {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    width: 400px;
+}
+
+.searchButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: 1px solid #007bff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.answerContainer {
+    margin-top: 20px;
+}
+
+.answerBox {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 400px;
+}
