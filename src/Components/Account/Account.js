@@ -6,7 +6,7 @@ import { Link, Navigate } from "react-router-dom";
 import InputControl from "../InputControl/InputControl";
 import Spinner from "../Spinner/Spinner";
 import ProjectForm from "./ProjectForm/ProjectForm";
-import { getUserFromDatabase } from "../../firebase";
+
 import {
     auth,
     uploadImage,
@@ -27,14 +27,13 @@ function Account(props) {
         useState(false);
     const [profileImageUrl, setProfileImageUrl] = useState(
         userDetails.profileImage ||
-        "https://drive.google.com/file/d/1q1Z2_ObbFopWr85MKLOHnqyO4WE6ahHY/view?usp=sharing"
+        "https://cdn.pixabay.com/photo/2021/02/23/09/26/cat-6042858__340.jpg"
     );
     const [userProfileValues, setUserProfileValues] = useState({
         name: userDetails.name || "",
         designation: userDetails.designation || "",
         github: userDetails.github || "",
         linkedin: userDetails.linkedin || "",
-        profileImage: userDetails.profileImage,
     });
     const [showSaveDetailsButton, setShowSaveDetailsButton] = useState(false);
     const [saveButtonDisabled, setSaveButtonDisabled] = useState(false);
@@ -51,7 +50,6 @@ function Account(props) {
 
     const handleCameraClick = () => {
         imagePicker.current.click();
-        // handleInputChange();
     };
 
     const handleImageChange = (event) => {
@@ -65,7 +63,7 @@ function Account(props) {
                 setProgress(progress);
             },
             (url) => {
-                setProfileImageUrl(url); // Set the uploaded image URL here
+                setProfileImageUrl(url);
                 updateProfileImageToDatabase(url);
                 setProfileImageUploadStarted(false);
                 setProgress(0);
@@ -77,8 +75,8 @@ function Account(props) {
         );
     };
 
-    const updateProfileImageToDatabase = async (url) => {
-        await updateUserDB(
+    const updateProfileImageToDatabase = (url) => {
+        updateUserDB(
             { ...userProfileValues, profileImage: url },
             userDetails.uid
         );
@@ -98,7 +96,7 @@ function Account(props) {
             setErrorMessage("Name required");
             return;
         }
-        updateProfileImageToDatabase();
+
         setSaveButtonDisabled(true);
         await updateUserDB({ ...userProfileValues }, userDetails.uid);
         setSaveButtonDisabled(false);
@@ -131,21 +129,8 @@ function Account(props) {
 
     useEffect(() => {
         fetchAllProjects();
-        // Fetch the user data including the profile image URL
-        const fetchUserDetails = async () => {
-            const userData = await getUserFromDatabase(userDetails.uid);
-            if (userData) {
-                setProfileImageUrl(userData.profileImage || ""); // Set the profile image URL here
-                setUserProfileValues({
-                    name: userData.name || "",
-                    designation: userData.designation || "",
-                    github: userData.github || "",
-                    linkedin: userData.linkedin || "",
-                });
-            }
-        };
-        fetchUserDetails();
     }, []);
+
     return isAuthenticated ? (
         <div className={styles.container}>
             {showProjectForm && (
@@ -177,14 +162,14 @@ function Account(props) {
                 <div className={styles.profile}>
                     <div className={styles.left}>
                         <div className={styles.image}>
-                            <img src={userDetails.profileImage} alt="Profile image" />
+                            <img src={profileImageUrl} alt="Profile image" />
                             <div className={styles.camera} onClick={handleCameraClick}>
                                 <Camera />
                             </div>
                         </div>
                         {profileImageUploadStarted ? (
                             <p className={styles.progress}>
-                                {progress === 100
+                                {progress == 100
                                     ? "Getting image url..."
                                     : `${progress.toFixed(2)}% uploaded`}
                             </p>
